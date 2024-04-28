@@ -35,19 +35,22 @@ def run(data: List[dict], models: List[str], properties: List[str]) -> Dict[str,
     :param properties: A list of property keys and values to filter the aggregation on. Format:
         key:value1,value2
     """
-    # a. Multiple models should union.
-    filtered_data = [object for object in data if object['model'] in models]
 
     req_value_freq_dict = {}
     if len(properties) == 0:
+        # a. Multiple models should union.
+        filtered_data = [object for object in data if object['model'] in models]
         # If there are no properties, aggregate on everything.
         for object in filtered_data:
             for property_dict in object['properties']:
                 req_value_freq_dict.setdefault(property_dict['slug'], {}).setdefault(property_dict['value'], 0)
                 req_value_freq_dict[property_dict['slug']][property_dict['value']] += 1
     elif len(models) == 0:
-        # I didn't have time to handle the case where there are no models.
-        pass
+        # Note: I added this logic at the last minute and am unsure if it's correct.
+        for object in data:
+            for property_dict in object['properties']:
+                req_value_freq_dict.setdefault(property_dict['slug'], {}).setdefault(property_dict['value'], 0)
+                req_value_freq_dict[property_dict['slug']][property_dict['value']] += 1
     else:
         agg_property_dict = {}
         for raw_property in properties:
