@@ -1,0 +1,82 @@
+[
+    {
+        "model": "person",
+        "properties": [
+            {
+                "slug": "first_name",
+                "type": "string",
+                "value": "elise"
+            },
+            {
+                "slug": "last_name",
+                "type": "string",
+                "value": "barnes"
+            },
+            {
+                "slug": "age",
+                "type": "integer",
+                "value": 32
+            },
+            {
+                "slug": "hair_color",
+                "type": "string",
+                "value": "grey"
+            },
+            {
+                "slug": "eye_color",
+                "type": "string",
+                "value": "green"
+            }
+        ]
+    },
+    {
+        "model": "vehicle",
+        "properties": [
+            {
+                "slug": "make",
+                "type": "string",
+                "value": "toyota"
+            },
+            {
+                "slug": "stolen",
+                "type": "boolean",
+                "value": true
+            },
+            {
+                "slug": "impounded",
+                "type": "boolean",
+                "value": false
+            },
+            {
+                "slug": "year",
+                "type": "integer",
+                "value": 2011
+            }
+        ]
+    },
+    {
+        "model": "vehicle",
+        "properties": [
+            {
+                "slug": "make",
+                "type": "string",
+                "value": "chevrolet"
+            },
+            {
+                "slug": "stolen",
+                "type": "boolean",
+                "value": false
+            },
+            {
+                "slug": "impounded",
+                "type": "boolean",
+                "value": false
+            },
+            {
+                "slug": "year",
+                "type": "integer",
+                "value": 2011
+            }
+        ]
+    }
+]
